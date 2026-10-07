@@ -38,3 +38,11 @@ select = [
     "UP",  # pyupgrade — forces modern Python syntax
     "SIM", # suggests simplifications
 ]
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = [
+    "fastapi.Depends",
+    "fastapi.Query",
+    "fastapi.Header",
+    "fastapi.Path",
+]

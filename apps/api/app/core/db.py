@@ -1,8 +1,9 @@
 from collections.abc import Iterator
 
-from sqlalchemy import Session, create_engine, sessionmaker
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session, sessionmaker
 
-from app.core.orm import settings
+from app.core.config import settings
 
 engine = create_engine(settings.database_url, pool_pre_ping=True)
 SessionLocal = sessionmaker(bind=engine)
